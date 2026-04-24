@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Farmacia "El mal no dura 100 años"</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <main>
+        <section class="seccion-nosotros">
+            <div class="contenedor">
+                <h1>Sobre Nosotros</h1>
+                <article class="mision-vision">
+                    <h2>¿A qué nos dedicamos?</h2>
+                    <p>
+                        En <strong>Farmacia "El mal no dura 100 años"</strong>, nos dedicamos a brindar bienestar y salud 
+                        a nuestra comunidad. No somos solo una farmacia; somos tus aliados en el cuidado diario, 
+                        especializándonos en la distribución responsable de medicamentos y productos de cuidado personal.
+                    </p>
+                    <p>
+                        Nuestro compromiso es ofrecer asesoría profesional y productos de alta calidad para todas las 
+                        etapas de la vida, desde los más pequeños hasta nuestros adultos mayores.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="seccion-contacto">
+            <div class="contenedor">
+                <h2>Contáctanos</h2>
+                <div class="grid-contacto">
+                    
+                    <div class="info-contacto">
+                        <h3>Información de atención</h3>
+                        <p>📍 <strong>Dirección:</strong> Av. Principal 123, Ciudad Salud</p>
+                        <p>📞 <strong>Teléfono:</strong> +51 987 654 321</p>
+                        <p>📧 <strong>Correo:</strong> contacto@elmalnodura100.com</p>
+                        <p>⏰ <strong>Horario:</strong> Lunes a Domingo - 24 Horas</p>
+                    </div>
+
+                    <div class="formulario-contenedor">
+                        <h3>Envíanos un mensaje</h3>
+                        <form id="form-contacto">
+                            <div class="campo">
+                                <label for="nombre">Nombre completo:</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+
+                            <div class="campo">
+                                <label for="email">Correo electrónico:</label>
+                                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                            </div>
+
+                            <div class="campo">
+                                <label for="asunto">Asunto:</label>
+                                <select id="asunto" name="asunto">
+                                    <option value="consulta">Consulta general</option>
+                                    <option value="pedido">Pedido especial</option>
+                                    <option value="queja">Sugerencias o Quejas</option>
+                                </select>
+                            </div>
+
+                            <div class="campo">
+                                <label for="mensaje">¿En qué podemos ayudarte?</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Farmacia "El mal no dura 100 años". Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../javascript/main.js"></script>
+</body>
+</html>
