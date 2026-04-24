@@ -1,34 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmacia - Inicio</title>
-    </head>
-<body>
-    <header>
-        <h1>Farmacia Nombre</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Medicamentos</a></li>
-                <li><a href="#">Contacto</a></li>
+<header>
+        <div class="logo-contenedor">
+            <h1>Farmacia "El mal no dura 100 años"</h1>
+        </div>
+        
+        <nav class="barra-navegacion">
+            <ul class="menu-principal">
+                
+                <li><a href="index.html" class="enlace-nav">🏠 Inicio</a></li>
+                <li><a href="nosotros.html" class="enlace-nav">👥 Nosotros</a></li>
+
+                <li class="item-desplegable">
+                    <button class="btn-desplegable">📦 Productos <span class="flecha">&#9660;</span></button>
+                    
+                    <ul class="sub-menu">
+                        <li><a href="ninos.html">🍼 Niños</a></li>
+                        <li><a href="adultos.html">👵 Persona Adulta</a></li>
+                        <li><a href="general.html">⚕️ Público General</a></li>
+                    </ul>
+                </li>
+
+                <li class="item-desplegable">
+                    <button class="btn-desplegable">⭐ Recomendaciones <span class="flecha">&#9660;</span></button>
+                    
+                    <ul class="sub-menu">
+                        <li><a href="piel.html">🧴 Cuidado de la piel</a></li>
+                        <li><a href="crecimiento.html">📈 Crecimiento</a></li>
+                        <li><a href="vitaminas.html">💊 Vitaminas</a></li>
+                        <li><a href="promociones.html">🏷️ Promociones</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </nav>
     </header>
-
-    <main>
-        <section class="banner-principal">
-            <h2>Bienvenidos a nuestra farmacia</h2>
-        </section>
-        
-        <section class="lista-productos">
-            </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Farmacia Nombre. Todos los derechos reservados.</p>
-    </footer>
-
-    </body>
-</html>
