@@ -1,0 +1,286 @@
+/* =========================================
+   1. VARIABLES DE COLOR Y FUENTES
+   ========================================= */
+:root {
+    --azul-burbuja: #00BFFF; /* Celeste fresco */
+    --azul-oscuro: #0077B6;  /* Azul profundo */
+    --blanco: #FFFFFF;
+    --fondo-gris: #F4F9F9;   /* Fondo muy claro */
+    --texto: #333333;        /* Gris oscuro para leer bien */
+    --gris-claro: #888888;
+}
+
+/* =========================================
+   2. RESETEO BÁSICO
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--fondo-gris);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* =========================================
+   3. ENCABEZADO Y NAVEGACIÓN (HEADER)
+   ========================================= */
+header {
+    /* Aquí está la magia del degradado de azul a celeste */
+    background: linear-gradient(to right, var(--azul-oscuro), var(--azul-burbuja));
+    display: flex;
+    justify-content: space-between; /* Logo a un lado, menú al otro */
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-contenedor h1 {
+    color: var(--blanco); /* Logo en blanco para resaltar con el fondo azul */
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.menu-principal {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.enlace-nav, .btn-desplegable {
+    text-decoration: none;
+    color: var(--blanco); /* Menú en blanco */
+    font-weight: 600;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+/* Efecto al pasar el ratón por el menú principal */
+.enlace-nav:hover, .btn-desplegable:hover {
+    color: #E0F7FA; 
+    transform: scale(1.05);
+}
+
+/* MENÚS DESPLEGABLES */
+.item-desplegable {
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    min-width: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.item-desplegable:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--texto); /* Letras oscuras en el submenú blanco */
+    transition: background 0.3s ease;
+}
+
+.sub-menu li a:hover {
+    background-color: var(--fondo-gris);
+    color: var(--azul-oscuro);
+    font-weight: bold;
+}
+
+/* =========================================
+   4. ESTRUCTURA GENERAL
+   ========================================= */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* =========================================
+   5. CATÁLOGO DE PRODUCTOS (NUEVO)
+   ========================================= */
+.cabecera-categoria {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cabecera-categoria h1 {
+    color: var(--azul-oscuro);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.cabecera-categoria p {
+    color: var(--gris-claro);
+    font-size: 1.1rem;
+}
+
+/* La cuadrícula mágica que acomoda los productos */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjeta individual de cada medicamento/producto */
+.tarjeta-producto {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-8px); /* La tarjeta "salta" un poquito hacia arriba */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-producto {
+    height: 200px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-producto img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Evita que las imágenes se estiren feo */
+}
+
+.info-producto h3 {
+    color: var(--azul-oscuro);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    height: 65px; /* Mantiene todas las tarjetas del mismo tamaño */
+    overflow: hidden;
+}
+
+.precio {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--azul-burbuja);
+    margin-bottom: 15px;
+}
+
+.btn-agregar-carrito {
+    background-color: var(--azul-burbuja);
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: var(--azul-oscuro);
+}
+
+/* =========================================
+   6. SECCIÓN: NOSOTROS Y CONTACTO
+   ========================================= */
+.seccion-nosotros, .seccion-contacto {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    padding: 40px;
+}
+
+.seccion-nosotros h1, .seccion-contacto h2 {
+    color: var(--azul-oscuro);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.mision-vision h2 { color: var(--azul-burbuja); margin-bottom: 15px; }
+
+.grid-contacto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.info-contacto h3, .formulario-contenedor h3 {
+    color: var(--azul-burbuja);
+    margin-bottom: 20px;
+}
+
+/* Formularios */
+.campo { display: flex; flex-direction: column; margin-bottom: 20px; }
+.campo label { margin-bottom: 8px; font-weight: 600; color: var(--azul-oscuro); }
+.campo input, .campo select, .campo textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    outline: none;
+    border-color: var(--azul-burbuja);
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.3);
+}
+
+.btn-enviar {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+.btn-enviar:hover { background-color: var(--azul-burbuja); }
+
+/* =========================================
+   7. PIE DE PÁGINA (FOOTER)
+   ========================================= */
+footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
