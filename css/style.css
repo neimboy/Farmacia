@@ -380,3 +380,61 @@ footer {
         height: 200px;
     }
 }
+/* =========================================
+   9. SECCIÓN: PROMOCIONES ESPECIALES
+   ========================================= */
+.seccion-promociones {
+    padding: 20px 0;
+}
+
+.cabecera-promocion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cabecera-promocion h1 {
+    color: var(--azul-oscuro);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.cabecera-promocion p {
+    color: var(--gris-claro);
+    font-size: 1.1rem;
+}
+
+/* Modificación a la tarjeta para que soporte la "pegatina" de descuento */
+.tarjeta-producto.promo {
+    position: relative; /* Clave para que la etiqueta no se salga de la tarjeta */
+    border: 2px solid var(--azul-burbuja); /* Un borde sutil para destacar que es oferta */
+}
+
+/* La pegatina de descuento (Ej: 20% OFF) */
+.etiqueta-ahorro {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #FF4757; /* Color rojo coral llamativo */
+    color: var(--blanco);
+    padding: 6px 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 8px rgba(255, 71, 87, 0.4);
+    transform: rotate(5deg); /* La giramos un poquito para que luzca casual */
+    z-index: 10;
+}
+
+/* El precio viejo tachado */
+.precio-antes {
+    text-decoration: line-through; /* Pone la línea sobre el texto */
+    color: #999999;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+/* Ajustamos el precio nuevo para que resalte más en las promos */
+.promo .precio {
+    font-size: 1.6rem;
+    color: #FF4757; /* Combinamos el precio con la pegatina roja */
+}
