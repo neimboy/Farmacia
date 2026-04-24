@@ -5,8 +5,8 @@
     --azul-burbuja: #00BFFF; /* Celeste fresco */
     --azul-oscuro: #0077B6;  /* Azul profundo */
     --blanco: #FFFFFF;
-    --fondo-gris: #F4F9F9;   /* Fondo muy claro */
-    --texto: #333333;        /* Gris oscuro para leer bien */
+    --fondo-gris: #F4F9F9; /* Fondo muy claro */
+    --texto: #333333; /* Gris oscuro para leer bien */
     --gris-claro: #888888;
 }
 
@@ -30,10 +30,9 @@ body {
    3. ENCABEZADO Y NAVEGACIÓN (HEADER)
    ========================================= */
 header {
-    /* Aquí está la magia del degradado de azul a celeste */
     background: linear-gradient(to right, var(--azul-oscuro), var(--azul-burbuja));
     display: flex;
-    justify-content: space-between; /* Logo a un lado, menú al otro */
+    justify-content: space-between; 
     align-items: center;
     padding: 15px 5%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -42,10 +41,16 @@ header {
     z-index: 1000;
 }
 
-.logo-contenedor h1 {
-    color: var(--blanco); /* Logo en blanco para resaltar con el fondo azul */
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+/* --- NUEVO: Adaptación perfecta para el logo --- */
+.logo-img {
+    max-height: 60px; /* Evita que el logo se haga gigante */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* Pequeño efecto al pasar el mouse por el logo */
 }
 
 .menu-principal {
@@ -57,7 +62,7 @@ header {
 
 .enlace-nav, .btn-desplegable {
     text-decoration: none;
-    color: var(--blanco); /* Menú en blanco */
+    color: var(--blanco); 
     font-weight: 600;
     font-size: 1rem;
     background: none;
@@ -66,7 +71,6 @@ header {
     transition: color 0.3s ease, transform 0.2s;
 }
 
-/* Efecto al pasar el ratón por el menú principal */
 .enlace-nav:hover, .btn-desplegable:hover {
     color: #E0F7FA; 
     transform: scale(1.05);
@@ -88,7 +92,7 @@ header {
     min-width: 220px;
     border-radius: 8px;
     overflow: hidden;
-    margin-top: 15px;
+    margin-top: 0; /* CORREGIDO: Esto arregla el bug de la lista que se cerraba sola */
 }
 
 .item-desplegable:hover .sub-menu {
@@ -99,7 +103,7 @@ header {
     display: block;
     padding: 12px 20px;
     text-decoration: none;
-    color: var(--texto); /* Letras oscuras en el submenú blanco */
+    color: var(--texto);
     transition: background 0.3s ease;
 }
 
@@ -119,7 +123,7 @@ header {
 }
 
 /* =========================================
-   5. CATÁLOGO DE PRODUCTOS (NUEVO)
+   5. CATÁLOGO DE PRODUCTOS
    ========================================= */
 .cabecera-categoria {
     text-align: center;
@@ -137,14 +141,12 @@ header {
     font-size: 1.1rem;
 }
 
-/* La cuadrícula mágica que acomoda los productos */
 .grid-productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
-/* Tarjeta individual de cada medicamento/producto */
 .tarjeta-producto {
     background-color: var(--blanco);
     border-radius: 12px;
@@ -158,7 +160,7 @@ header {
 }
 
 .tarjeta-producto:hover {
-    transform: translateY(-8px); /* La tarjeta "salta" un poquito hacia arriba */
+    transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -173,7 +175,7 @@ header {
 .imagen-producto img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Evita que las imágenes se estiren feo */
+    object-fit: contain; /* Las imágenes se verán completas y bien proporcionadas */
 }
 
 .info-producto h3 {
@@ -186,7 +188,7 @@ header {
     font-size: 0.9rem;
     color: #666;
     margin-bottom: 15px;
-    height: 65px; /* Mantiene todas las tarjetas del mismo tamaño */
+    height: 65px;
     overflow: hidden;
 }
 
@@ -231,7 +233,10 @@ header {
     margin-bottom: 25px;
 }
 
-.mision-vision h2 { color: var(--azul-burbuja); margin-bottom: 15px; }
+.mision-vision h2 { 
+    color: var(--azul-burbuja);
+    margin-bottom: 15px; 
+}
 
 .grid-contacto {
     display: grid;
@@ -244,15 +249,25 @@ header {
     margin-bottom: 20px;
 }
 
-/* Formularios */
-.campo { display: flex; flex-direction: column; margin-bottom: 20px; }
-.campo label { margin-bottom: 8px; font-weight: 600; color: var(--azul-oscuro); }
+.campo { 
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 20px; 
+}
+
+.campo label { 
+    margin-bottom: 8px; 
+    font-weight: 600; 
+    color: var(--azul-oscuro);
+}
+
 .campo input, .campo select, .campo textarea {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: all 0.3s;
 }
+
 .campo input:focus, .campo select:focus, .campo textarea:focus {
     outline: none;
     border-color: var(--azul-burbuja);
@@ -271,7 +286,10 @@ header {
     width: 100%;
     transition: background-color 0.3s;
 }
-.btn-enviar:hover { background-color: var(--azul-burbuja); }
+
+.btn-enviar:hover { 
+    background-color: var(--azul-burbuja);
+}
 
 /* =========================================
    7. PIE DE PÁGINA (FOOTER)
@@ -284,6 +302,7 @@ footer {
     margin-top: 40px;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
 }
+
 /* =========================================
    8. SECCIÓN: RECOMENDACIONES (PIEL.HTML)
    ========================================= */
@@ -310,20 +329,17 @@ footer {
     margin: 0 auto;
 }
 
-/* Usamos Grid para acomodar las tarjetas de recomendaciones */
 .grid-recomendaciones {
     display: grid;
-    /* Esto crea columnas anchas para que el texto y la imagen quepan lado a lado */
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 30px;
 }
 
-/* Diseño de tarjeta estilo Blog / Artículo */
 .tarjeta-recomendacion {
     background-color: var(--blanco);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    display: flex; /* Flexbox para poner imagen a la izquierda y texto a la derecha */
+    display: flex;
     align-items: center;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -336,7 +352,7 @@ footer {
 }
 
 .tarjeta-recomendacion figure {
-    flex-shrink: 0; /* Evita que la imagen se aplaste */
+    flex-shrink: 0;
     width: 160px;
     height: 160px;
     border-radius: 8px;
@@ -368,7 +384,6 @@ footer {
     line-height: 1.6;
 }
 
-/* Magia responsiva: Si la pantalla es pequeña (celular), pasamos la imagen arriba del texto */
 @media (max-width: 600px) {
     .tarjeta-recomendacion {
         flex-direction: column;
@@ -380,6 +395,7 @@ footer {
         height: 200px;
     }
 }
+
 /* =========================================
    9. SECCIÓN: PROMOCIONES ESPECIALES
    ========================================= */
@@ -403,38 +419,34 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Modificación a la tarjeta para que soporte la "pegatina" de descuento */
 .tarjeta-producto.promo {
-    position: relative; /* Clave para que la etiqueta no se salga de la tarjeta */
-    border: 2px solid var(--azul-burbuja); /* Un borde sutil para destacar que es oferta */
+    position: relative;
+    border: 2px solid var(--azul-burbuja);
 }
 
-/* La pegatina de descuento (Ej: 20% OFF) */
 .etiqueta-ahorro {
     position: absolute;
     top: -10px;
     right: -10px;
-    background-color: #FF4757; /* Color rojo coral llamativo */
+    background-color: #FF4757; 
     color: var(--blanco);
     padding: 6px 15px;
     font-weight: bold;
     border-radius: 20px;
     font-size: 0.95rem;
     box-shadow: 0 4px 8px rgba(255, 71, 87, 0.4);
-    transform: rotate(5deg); /* La giramos un poquito para que luzca casual */
+    transform: rotate(5deg);
     z-index: 10;
 }
 
-/* El precio viejo tachado */
 .precio-antes {
-    text-decoration: line-through; /* Pone la línea sobre el texto */
+    text-decoration: line-through;
     color: #999999;
     font-size: 1rem;
     margin-bottom: 2px;
 }
 
-/* Ajustamos el precio nuevo para que resalte más en las promos */
 .promo .precio {
     font-size: 1.6rem;
-    color: #FF4757; /* Combinamos el precio con la pegatina roja */
+    color: #FF4757; 
 }
